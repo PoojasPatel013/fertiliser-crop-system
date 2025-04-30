@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fertilizer Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Fertilizer Recommendation</h1>
+        <form id="prediction-form">
+            <div class="form-group">
+                <label for="crop-type">Crop Type</label>
+                <select id="crop-type" required>
+                    <option value="Maize">Maize</option>
+                    <option value="Sugarcane">Sugarcane</option>
+                    <option value="Cotton">Cotton</option>
+                    <option value="Tobacco">Tobacco</option>
+                    <option value="Paddy">Paddy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="soil-type">Soil Type</label>
+                <select id="soil-type" required>
+                    <option value="Sandy">Sandy</option>
+                    <option value="Loamy">Loamy</option>
+                    <option value="Black">Black</option>
+                    <option value="Red">Red</option>
+                    <option value="Clayey">Clayey</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="temperature">Temperature (°C)</label>
+                <input type="number" id="temperature" min="0" max="50" required>
+            </div>
+            <div class="form-group">
+                <label for="humidity">Humidity (%)</label>
+                <input type="number" id="humidity" min="0" max="100" required>
+            </div>
+            <div class="form-group">
+                <label for="moisture">Moisture (%)</label>
+                <input type="number" id="moisture" min="0" max="100" required>
+            </div>
+            <button type="submit">Get Fertilizer Recommendation</button>
+        </form>
+        <div id="result" class="result-container"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
